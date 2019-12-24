@@ -50,6 +50,7 @@ Use the python multiprocessing package to implement parallel operation with mult
 - Lock can be realeased by a different thread than was used to acquire it
 - RLock must be released by the same thead that acquired it. 
 - RLock must be released the same number of times it was acquired.
+- The acquire() method can be called recursively on a RLock, but not on a regular Lock.
 
 ## Try Lock / Non-blocking Lock
 - Non-blocking lock/acquire method of mutex
@@ -60,3 +61,7 @@ Use the python multiprocessing package to implement parallel operation with mult
   pip install readerwriterlock
 ```
 
+## Liveness
+- Deadlock
+  Eack member is waiting for another memuber to take action
+  
