@@ -9,8 +9,10 @@
 
 ## Key points
 - Process and thread
+
 - Mutual exclusion
-  - Race condition
+  - Race condition and critical section
+
 - Lock
   - Reentrant lock
   - Try lock
