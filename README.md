@@ -46,7 +46,17 @@ CIL can negatively impact performance for CPU bound application
 
 Use the python multiprocessing package to implement parallel operation with multiple process instead of multiple threads.
 
+## Lock vs. RLock
+- Lock can be realeased by a different thread than was used to acquire it
+- RLock must be released by the same thead that acquired it. 
+- RLock must be released the same number of times it was acquired.
 
+## Try Lock / Non-blocking Lock
+- Non-blocking lock/acquire method of mutex
+- If the mutext is available, lock it and return True. If the mutext is not availabel, immediately return False
 
-
+## Reader-Writer lock
+```
+  pip install readerwriterlock
+```
 
