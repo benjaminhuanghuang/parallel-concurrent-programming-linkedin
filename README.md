@@ -8,14 +8,21 @@
 
 
 ## Key points
-
+- Process and thread
+- Mutual exclusion
+  - Race condition
 - Lock
-- Race condition
-
+  - Reentrant lock
+  - Try lock
+  - Read-write lock
+- Liveness
+  - Dead lock
+  - Starvation
+  - Live lock
 
 ## Setup
 ```
-$ virtualenv --system-site-packages -p python3 venv3
+$ python3 -m venv venv3
 
 $ . venv3/bin/activate
 
@@ -24,6 +31,20 @@ $ . venv3/bin/activate
 ...
 (venv3)$ deactivate
 ```
+
+
+## Global interperater lock
+Mechamism limits python to only execute ONE thread at a time
+
+CPython has GIL
+
+GIL is not a bottleneck for I/O bound application
+
+CIL can negatively impact performance for CPU bound application
+
+Use the python multiprocessing package to implement parallel operation with multiple process instead of multiple threads.
+
+
 
 
 
