@@ -1,5 +1,5 @@
 
-## API
+## Thread
 ```
 import os
 import threading
@@ -34,10 +34,40 @@ class ChefOlivia(threading.Thread):
   def run(self):
     time.sleep(3)
 
+```
 
+
+## Lock
+```
 # Lock
 pencil = threading.Lock()
 pencil.acquire()
   garlic_count += 1
 pencil.release()
+
+
+# reentrant lock
+pencil = threading.RLock()
+
+
+# Read write lock
+marker = rwlock.RWLockFair()
+
+read_marker = marker.gen_rlock()    ## Reader Lock
+write_marker = marker.gen_wlock()   ## Write Lock
+
 ```
+
+## Condition
+```
+import threading
+
+slowcooker_lid = threading.Lock()
+soup_taken = threading.Condition(lock=slowcooker_lid)
+
+while not (SOME CONDITION)
+  soup_taken.wait()
+  #do something
+  soup_taken.notify_all()
+```
+

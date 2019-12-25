@@ -19,7 +19,7 @@ def calendar_reader(id_number):
 
 def calendar_writer(id_number):
     global today
-    write_marker = marker.gen_wlock()  ## Reader Lock
+    write_marker = marker.gen_wlock()  ## Write Lock
     name = 'Writer-' + str(id_number)
     while today < len(WEEKDAYS)-1:
         write_marker.acquire()
