@@ -71,3 +71,14 @@ while not (SOME CONDITION)
   soup_taken.notify_all()
 ```
 
+
+## Thread pool
+```
+import concurrent.futures
+
+concurrent.futures.ThreadPoolExecutor() 
+```
+
+## Future
+```
+```
