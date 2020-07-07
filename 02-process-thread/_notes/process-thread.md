@@ -23,6 +23,6 @@
 
 
 ## Thread Status
-
+![](./_images/thread-status.png)
 
  

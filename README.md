@@ -1,10 +1,14 @@
-# Python multi-thread and concurrency
+# Parallel and Concurrent programing with Python, Java, C++
 
 
 ## Referecen
 - [Parallel and Concurrent Programming with Python 1](https://www.linkedin.com/learning/parallel-and-concurrent-programming-with-python-1)
 
 - [Parallel and Concurrent Programming with Python 2](https://www.linkedin.com/learning/parallel-and-concurrent-programming-with-python-2)
+
+
+- [Parallel and Concurrent Programming with C++ Part 1](https://www.linkedin.com/learning/parallel-and-concurrent-programming-with-c-plus-plus-part-1)
+
 
 
 
