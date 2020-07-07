@@ -1,9 +1,10 @@
-# py-concurrency
+# Python multi-thread and concurrency
 
 
 ## Referecen
--[Parallel and Concurrent Programming with Python 1](https://www.linkedin.com/learning/parallel-and-concurrent-programming-with-python-1)
--[Parallel and Concurrent Programming with Python 2](https://www.linkedin.com/learning/parallel-and-concurrent-programming-with-python-2)
+- [Parallel and Concurrent Programming with Python 1](https://www.linkedin.com/learning/parallel-and-concurrent-programming-with-python-1)
+
+- [Parallel and Concurrent Programming with Python 2](https://www.linkedin.com/learning/parallel-and-concurrent-programming-with-python-2)
 
 
 
@@ -35,16 +36,6 @@ $ . venv3/bin/activate
 ```
 
 
-## Global interperater lock
-Mechamism limits python to only execute ONE thread at a time
-
-CPython has GIL
-
-GIL is not a bottleneck for I/O bound application
-
-CIL can negatively impact performance for CPU bound application
-
-Use the python multiprocessing package to implement parallel operation with multiple process instead of multiple threads.
 
 ## Lock vs. RLock
 - Lock can be realeased by a different thread than was used to acquire it
