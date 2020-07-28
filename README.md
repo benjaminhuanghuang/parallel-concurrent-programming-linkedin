@@ -8,7 +8,7 @@
 
 
 - [Parallel and Concurrent Programming with C++ Part 1](https://www.linkedin.com/learning/parallel-and-concurrent-programming-with-c-plus-plus-part-1)
-
+- [Parallel and Concurrent Programming with C++ Part 2](https://www.linkedin.com/learning/parallel-and-concurrent-programming-with-c-plus-plus-part-2/)
 
 
 
