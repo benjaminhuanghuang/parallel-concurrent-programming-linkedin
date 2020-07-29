@@ -1,5 +1,5 @@
 /**
- * Solution: Multiply two matrices
+ * Challenge: Multiply two matrices
  */
 #include <thread>
 #include <cmath>
@@ -18,49 +18,21 @@ void sequential_matrix_multiply(long ** A, size_t num_rows_a, size_t num_cols_a,
 	}
 }
 
-/* prototype of helper function for parallel_matrix_multiply */
-void parallel_worker(long **, size_t, size_t, long **, size_t, size_t,long **, size_t, size_t);
-
 /* parallel implementation of matrix multiply */
 void parallel_matrix_multiply(long ** A, size_t num_rows_a, size_t num_cols_a,
                               long ** B, size_t num_rows_b, size_t num_cols_b,
 							  long ** C) {
-    size_t num_workers = std::thread::hardware_concurrency();
-    size_t chunk_size = ceil((float)num_rows_a/num_workers);
-
-    std::thread workers[num_workers];
-    for (size_t i=0; i<num_workers; i++) {
-        size_t start_row_c = std::min(i * chunk_size, num_rows_a);
-        size_t end_row_c = std::min((i + 1) * chunk_size, num_rows_a);
-        workers[i] = std::thread(parallel_worker, A, num_rows_a, num_cols_a,
-												  B, num_rows_b, num_cols_b,
-												  C, start_row_c, end_row_c);
-    }
-    for (auto &w : workers) {
-        w.join();
-    }
-}
-
-/* helper function for parallel_matrix_multiply */
-void parallel_worker(long ** A, size_t num_rows_a, size_t num_cols_a,
-                     long ** B, size_t num_rows_b, size_t num_cols_b,
-					 long ** C, size_t start_row_c, size_t end_row_c) {
-    for (size_t i=start_row_c; i<end_row_c; i++) { // subset of rows in A
-        for (size_t j=0; j<num_cols_b; j++) {
-			C[i][j] = 0; // initialize result cell to zero
-            for (size_t k=0; k<num_cols_a; k++) {
-                C[i][j] += A[i][k] * B[k][j];
-            } 
-		}
-	}		
+    /***********************
+     * YOUR CODE GOES HERE *
+     ***********************/
 }
 
 int main() {
 	const int NUM_EVAL_RUNS = 3;
-	const size_t NUM_ROWS_A = 10;
-	const size_t NUM_COLS_A = 10;
+	const size_t NUM_ROWS_A = 1000;
+	const size_t NUM_COLS_A = 1000;
 	const size_t NUM_ROWS_B = NUM_COLS_A;
-	const size_t NUM_COLS_B = 10;
+	const size_t NUM_COLS_B = 1000;
 
     // intialize A and B with values in range 1 to 100    
     long ** A = (long **)malloc(NUM_ROWS_A * sizeof(long));
@@ -68,6 +40,7 @@ int main() {
     if ((A == NULL) || (A == NULL)) {
         exit(2);
     }
+    
     for (size_t i=0; i<NUM_ROWS_A; i++) {
         A[i] = (long *)malloc(NUM_COLS_A * sizeof(long));
         B[i] = (long *)malloc(NUM_COLS_B * sizeof(long));
